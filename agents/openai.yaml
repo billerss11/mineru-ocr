@@ -1,0 +1,4 @@
+interface:
+  display_name: "MinerU API OCR"
+  short_description: "Precise OCR through MinerU API"
+  default_prompt: "Use $mineru-ocr to parse this PDF with MinerU precise API and return the Markdown, HTML, and JSON outputs."
