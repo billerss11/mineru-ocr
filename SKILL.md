@@ -9,6 +9,16 @@ Use MinerU's precise parsing API by default. This is the token-based asynchronou
 
 For local GPU/offline parsing, `scripts/mineru_ocr.py` still exists, but it is not the default path for API-based work.
 
+## Repository
+
+Source repository: https://github.com/billerss11/mineru-ocr
+
+Use this repository as the update source for this skill. The local git remote should be:
+
+```powershell
+git remote set-url origin https://github.com/billerss11/mineru-ocr.git
+```
+
 ## Default Workflow
 
 1. Confirm the file can be sent to an external API. Do not upload private or sensitive documents unless the user has approved that.
