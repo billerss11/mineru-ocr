@@ -7,5 +7,4 @@ __pycache__/
 *.log
 
 mineru_api_output/
-mineru_ocr_output/
 *.zip

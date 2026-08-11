@@ -5,9 +5,7 @@ description: Use when Codex needs to parse PDFs, scanned documents, images, Offi
 
 # MinerU OCR
 
-Use MinerU's precise parsing API by default. This is the token-based asynchronous API that returns a zip containing Markdown, JSON, and HTML outputs by default. Do not use the no-token Agent lightweight API unless the user explicitly asks for lightweight parsing.
-
-For local GPU/offline parsing, `scripts/mineru_ocr.py` still exists, but it is not the default path for API-based work.
+Use MinerU's precise parsing API only. This is the token-based asynchronous API that returns a zip containing Markdown, JSON, and HTML outputs by default. Do not use local GPU/offline parsing. Do not use the no-token Agent lightweight API unless the user explicitly asks for lightweight parsing.
 
 ## Repository
 
