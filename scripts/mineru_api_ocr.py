@@ -130,13 +130,23 @@ def request_json(
 def upload_file(upload_url: str, file_path: Path, timeout: float) -> None:
     if _requests is not None:
         with file_path.open("rb") as handle:
-            response = _requests.put(upload_url, data=handle, timeout=timeout)
+            response = _requests.put(
+                upload_url,
+                data=handle,
+                headers={"Content-Type": ""},
+                timeout=timeout,
+            )
         if response.status_code not in {200, 201}:
             raise MinerUApiError(f"Upload failed with HTTP {response.status_code}: {response.text[:1000]}")
         return
 
     data = file_path.read_bytes()
-    req = urllib.request.Request(upload_url, data=data, headers={"Accept": "*/*"}, method="PUT")
+    req = urllib.request.Request(
+        upload_url,
+        data=data,
+        headers={"Accept": "*/*", "Content-Type": ""},
+        method="PUT",
+    )
     try:
         with urllib.request.urlopen(req, timeout=timeout) as response:
             if response.status not in {200, 201}:

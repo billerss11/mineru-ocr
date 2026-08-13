@@ -105,6 +105,7 @@ MinerU precise API limits are 200 MB and 200 pages per file. Supported types inc
 
 Common failures:
 
+- HTTP `403 SignatureDoesNotMatch` from the OSS upload: ensure the signed `PUT` sends an empty `Content-Type`; Python clients may otherwise default to `application/x-www-form-urlencoded` and invalidate the signature.
 - `A0202` or `A0211`: token is wrong or expired.
 - `-60005`: file is over 200 MB.
 - `-60006`: file has over 200 pages.
